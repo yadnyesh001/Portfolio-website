@@ -48,7 +48,7 @@ function Navbar() {
             onClick={() => scrollToSection('home')}
           >
             <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent group-hover:scale-105 transition-transform">
-              Portfolio
+              Yadnyesh
             </h1>
           </div>
 

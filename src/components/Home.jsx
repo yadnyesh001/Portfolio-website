@@ -9,7 +9,6 @@ function Home() {
   return (
     <div className="relative flex min-h-screen items-center justify-center px-4 sm:px-6 lg:px-8">
       {/* Animated background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white to-blue-50 dark:from-gray-900 dark:to-gray-800 animate-shimmer"></div>
       
       {/* Content */}
       <div className="relative text-center">

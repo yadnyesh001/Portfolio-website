@@ -2,12 +2,20 @@ import React from 'react';
 
 function Skills() {
   const skills = [
-    { name: 'HTML/CSS', level: 90 },
-    { name: 'JavaScript', level: 85 },
-    { name: 'React', level: 80 },
-    { name: 'Node.js', level: 75 },
-    { name: 'Python', level: 70 },
-    { name: 'SQL', level: 75 },
+    { name: 'HTML', level: 90, logo: 'https://raw.githubusercontent.com/github/explore/main/topics/html/html.png' },
+    { name: 'CSS', level: 90, logo: 'https://raw.githubusercontent.com/github/explore/main/topics/css/css.png' },
+    { name: 'JavaScript', level: 85, logo: 'https://raw.githubusercontent.com/github/explore/main/topics/javascript/javascript.png' },
+    { name: 'React', level: 80, logo: 'https://raw.githubusercontent.com/github/explore/main/topics/react/react.png' },
+    { name: 'Node.js', level: 75, logo: 'https://raw.githubusercontent.com/github/explore/main/topics/nodejs/nodejs.png' },
+    { name: 'Express.js', level: 75, logo: 'https://raw.githubusercontent.com/github/explore/main/topics/express/express.png' },
+    { name: 'Postman', level: 70, logo: 'https://raw.githubusercontent.com/github/explore/main/topics/postman/postman.png' },
+    { name: 'Redux', level: 80, logo: 'https://raw.githubusercontent.com/github/explore/main/topics/redux/redux.png' },
+    { name: 'Tailwind', level: 75, logo: 'https://raw.githubusercontent.com/github/explore/main/topics/tailwind/tailwind.png' },
+    { name: 'MongoDB', level: 75, logo: 'https://raw.githubusercontent.com/github/explore/main/topics/mongodb/mongodb.png' },
+    { name: 'Git', level: 80, logo: 'https://raw.githubusercontent.com/github/explore/main/topics/git/git.png' },
+    { name: 'Java', level: 70, logo: 'https://raw.githubusercontent.com/github/explore/main/topics/java/java.png' },
+    { name: 'Figma', level: 70, logo: 'https://raw.githubusercontent.com/github/explore/main/topics/figma/figma.png' },
+    { name: 'SQL', level: 75, logo: 'https://raw.githubusercontent.com/github/explore/main/topics/sql/sql.png' },
   ];
 
   return (
@@ -19,25 +27,21 @@ function Skills() {
         <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
       </div>
 
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
         {skills.map((skill, index) => (
           <div 
             key={skill.name} 
-            className="mb-8 animate-fade-in"
+            className="flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 animate-fade-in"
             style={{ animationDelay: `${index * 200}ms` }}
           >
-            <div className="flex justify-between mb-2">
-              <span className="text-gray-700 dark:text-gray-300 font-medium">
-                {skill.name}
-              </span>
-              <span className="text-gray-600 dark:text-gray-400">
-                {skill.level}%
-              </span>
-            </div>
-            <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden">
-              <div
-                className="bg-gradient-to-r from-blue-500 to-purple-500 h-2.5 rounded-full progress-bar"
-                style={{ '--target-width': `${skill.level}%` }}
+            <img src={skill.logo} alt={skill.name} className="h-16 w-16 mb-4" />
+            <span className="text-gray-700 dark:text-gray-300 font-medium">
+              {skill.name}
+            </span>
+            <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 mt-2">
+              <div 
+                className="bg-blue-600 h-2.5 rounded-full" 
+                style={{ width: `${skill.level}%` }}
               ></div>
             </div>
           </div>

@@ -25,7 +25,7 @@ function Home() {
             Yadnyesh Badgujar
           </h1>
           <p className="text-xl sm:text-2xl pl-6 text-gray-600 dark:text-gray-300 mb-4 animate-slide-right">
-            Crafting Seamless Digital Experiences
+            Full Stack Developer
           </p>
           <p className="text-lg text-gray-600 pl-6 dark:text-gray-400 max-w-2xl mx-auto sm:mx-0 animate-fade-in">
             As a passionate Full Stack Developer, I specialize in building modern, responsive web applications. I love solving complex problems and delivering elegant solutions using cutting-edge technologies.

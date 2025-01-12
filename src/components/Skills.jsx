@@ -1,24 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Skills = () => {
   const skills = [
-    { name: 'HTML', logo: 'https://raw.githubusercontent.com/github/explore/main/topics/html/html.png', category: 'Frontend' },
-    { name: 'CSS', logo: 'https://raw.githubusercontent.com/github/explore/main/topics/css/css.png', category: 'Frontend' },
-    { name: 'JavaScript', logo: 'https://raw.githubusercontent.com/github/explore/main/topics/javascript/javascript.png', category: 'Frontend' },
-    { name: 'React', logo: 'https://raw.githubusercontent.com/github/explore/main/topics/react/react.png', category: 'Frontend' },
-    { name: 'Node.js', logo: 'https://raw.githubusercontent.com/github/explore/main/topics/nodejs/nodejs.png', category: 'Backend' },
-    { name: 'Express.js', logo: 'https://raw.githubusercontent.com/github/explore/main/topics/express/express.png', category: 'Backend' },
-    { name: 'Postman', logo: 'https://raw.githubusercontent.com/github/explore/main/topics/postman/postman.png', category: 'Tools' },
-    { name: 'Redux', logo: 'https://raw.githubusercontent.com/github/explore/main/topics/redux/redux.png', category: 'Frontend' },
-    { name: 'Tailwind', logo: 'https://raw.githubusercontent.com/github/explore/main/topics/tailwind/tailwind.png', category: 'Frontend' },
-    { name: 'MongoDB', logo: 'https://raw.githubusercontent.com/github/explore/main/topics/mongodb/mongodb.png', category: 'Backend' },
-    { name: 'Git', logo: 'https://raw.githubusercontent.com/github/explore/main/topics/git/git.png', category: 'Tools' },
-    { name: 'Java', logo: 'https://raw.githubusercontent.com/github/explore/main/topics/java/java.png', category: 'Backend' },
-    { name: 'Figma', logo: 'https://raw.githubusercontent.com/github/explore/main/topics/figma/figma.png', category: 'Tools' },
-    { name: 'SQL', logo: 'https://raw.githubusercontent.com/github/explore/main/topics/sql/sql.png', category: 'Backend' },
+    { name: 'HTML', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg', category: 'Frontend' },
+    { name: 'CSS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg', category: 'Frontend' },
+    { name: 'JavaScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg', category: 'Frontend' },
+    { name: 'React', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', category: 'Frontend' },
+    { name: 'Node.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg', category: 'Backend' },
+    { name: 'Express.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg', category: 'Backend' },
+    { name: 'Postman', logo: 'https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg', category: 'Tools' },
+    { name: 'Redux', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg', category: 'Frontend' },
+    { name: 'Tailwind', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg', category: 'Frontend' },
+    { name: 'MongoDB', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg', category: 'Backend' },
+    { name: 'Git', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg', category: 'Tools' },
+    { name: 'Java', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg', category: 'Backend' },
+    { name: 'Figma', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg', category: 'Tools' },
+    { name: 'SQL', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg', category: 'Backend' },
   ];
 
-  const [selectedCategory, setSelectedCategory] = React.useState('All');
+  const [selectedCategory, setSelectedCategory] = useState('All');
   const categories = ['All', ...new Set(skills.map(skill => skill.category))];
 
   const filteredSkills = selectedCategory === 'All' 
@@ -26,54 +26,58 @@ const Skills = () => {
     : skills.filter(skill => skill.category === selectedCategory);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800 py-24 px-4">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 py-20 px-4">
+      <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16 space-y-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">
+          <h2 className="text-5xl md:text-6xl font-bold text-gray-800 tracking-tight">
             Technical Expertise
           </h2>
-          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             A comprehensive overview of my technical skills and proficiency levels
           </p>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto rounded-full"></div>
+          <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
         </div>
 
-        <div className="flex justify-center gap-4 mb-12 flex-wrap">
+        <div className="flex justify-center gap-3 mb-12 flex-wrap">
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-4 py-2 rounded-full transition-all duration-300 ${
+              className={`px-6 py-3 rounded-full transition-all duration-300 text-lg font-medium ${
                 selectedCategory === category
-                  ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/30'
-                  : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700'
+                  ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg shadow-purple-500/50'
+                  : 'bg-white text-gray-700 hover:bg-gray-50 shadow-md'
               }`}
+              aria-pressed={selectedCategory === category}
             >
               {category}
             </button>
           ))}
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {filteredSkills.map((skill, index) => (
             <div
-              key={skill.name}
-              className="group relative bg-white dark:bg-gray-800 rounded-xl shadow-xl p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 hover:bg-gradient-to-br hover:from-white hover:to-blue-50 dark:hover:from-gray-800 dark:hover:to-gray-700"
-              style={{ animation: `fadeInUp ${0.3 + index * 0.1}s ease` }}
+              key={`${skill.name}-${index}`}
+              className="group relative bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
             >
-              <div className="flex flex-col items-center">
-                <div className="relative w-16 h-16 mb-4">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="relative p-6 flex flex-col items-center">
+                <div className="w-20 h-20 mb-4 transition-transform duration-300 transform group-hover:scale-110 group-hover:rotate-3">
                   <img
                     src={skill.logo}
-                    alt={skill.name}
-                    className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
+                    alt={`${skill.name} logo`}
+                    className="w-full h-full object-contain filter drop-shadow-lg"
                   />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2">
+                <h3 className="text-xl font-semibold text-gray-800 mb-2 transition-colors duration-300 group-hover:text-blue-600">
                   {skill.name}
                 </h3>
+                <span className="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
+                  {skill.category}
+                </span>
               </div>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-indigo-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl" />
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
             </div>
           ))}
         </div>

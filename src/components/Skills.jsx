@@ -10,7 +10,7 @@ const Skills = () => {
     { name: 'Express.js', logo: 'https://raw.githubusercontent.com/github/explore/main/topics/express/express.png', category: 'Backend' },
     { name: 'Postman', logo: 'https://raw.githubusercontent.com/github/explore/main/topics/postman/postman.png', category: 'Tools' },
     { name: 'Redux', logo: 'https://raw.githubusercontent.com/github/explore/main/topics/redux/redux.png', category: 'Frontend' },
-    { name: 'Tailwind', logo: 'https://raw.githubusercontent.com/github/explore/main/topics/tailwindcss/tailwindcss.png', category: 'Frontend' },
+    { name: 'Tailwind', logo: 'https://raw.githubusercontent.com/github/explore/main/topics/tailwind/tailwind.png', category: 'Frontend' },
     { name: 'MongoDB', logo: 'https://raw.githubusercontent.com/github/explore/main/topics/mongodb/mongodb.png', category: 'Backend' },
     { name: 'Git', logo: 'https://raw.githubusercontent.com/github/explore/main/topics/git/git.png', category: 'Tools' },
     { name: 'Java', logo: 'https://raw.githubusercontent.com/github/explore/main/topics/java/java.png', category: 'Backend' },

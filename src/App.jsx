@@ -31,8 +31,8 @@ function App() {
       <main>
         <section id="home" className="min-h-screen"><Home /></section>
         <section id="about" className="min-h-screen"><About /></section>
-        <section id="skills" className="min-h-screen"><Skills /></section>
-        <section id="projects" className="min-h-screen"><Projects /></section>
+        <section id="skills"><Skills /></section>
+        <section id="projects"><Projects /></section>
         <section id="contact" className="min-h-screen"><Contact /></section>
       </main>
     </div>

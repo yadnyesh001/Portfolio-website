@@ -42,51 +42,51 @@ const Contact = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white to-blue-50 dark:from-gray-900 dark:to-gray-800 py-8 px-4 sm:px-6 lg:px-8">
+    <div className="bg-gradient-to-br from-white to-blue-50 dark:from-gray-900 dark:to-gray-800 py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center space-y-4 mb-12">
+        <div className="text-center mb-8">
           <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
             Let's Connect
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="mt-2 text-gray-600 dark:text-gray-400">
             Have a question or want to work together? Drop me a message below and I'll get back to you as soon as possible.
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto mt-4"></div>
         </div>
 
-        <div className="grid md:grid-cols-5 gap-6 max-w-6xl mx-auto">
-          {/* Contact Info Card */}
-          <div className="md:col-span-2 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border-0 shadow-xl rounded-lg p-4">
-            <div className="space-y-4">
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+        <div className="grid md:grid-cols-2 gap-8 items-start">
+          {/* Left side: Contact Info */}
+          <div className="space-y-6">
+            <div className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border-0 shadow-xl rounded-lg p-4">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
                 Contact Information
               </h3>
               <div className="space-y-2">
                 <ContactInfo
                   icon={Mail}
-                  text="john.doe@example.com"
-                  href="mailto:john.doe@example.com"
+                  text="yadnyeshavinash.b22@iiits.in"
+                  href="mailto:yadnyeshavinash.b22@iiits.in"
                 />
                 <ContactInfo
                   icon={Phone}
-                  text="+1 234 567 890"
-                  href="tel:+1234567890"
+                  text="+91 9699909117"
+                  href="tel:+91 9699909117"
                 />
                 <ContactInfo
                   icon={MapPin}
-                  text="San Francisco, CA"
+                  text="Maharashtra, India"
                   href="https://maps.google.com"
                 />
               </div>
             </div>
           </div>
 
-          {/* Contact Form Card */}
-          <div className="md:col-span-3 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border-0 shadow-xl rounded-lg p-4">
+          {/* Right side: Contact Form */}
+          <div className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border-0 shadow-xl rounded-lg p-6">
             <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid grid-cols-1 gap-4">
-                <div className="space-y-1">
-                  <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
+              <div className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                     Name
                   </label>
                   <input
@@ -97,8 +97,8 @@ const Contact = () => {
                     required
                   />
                 </div>
-                <div className="space-y-1">
-                  <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                     Email
                   </label>
                   <input
@@ -110,15 +110,15 @@ const Contact = () => {
                     required
                   />
                 </div>
-                <div className="space-y-1">
-                  <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                     Message
                   </label>
                   <textarea
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    rows={3}
+                    rows={4}
                     className="w-full px-3 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white/50 dark:bg-gray-700/50 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:text-white resize-none transition-all duration-300"
                     required
                   />
@@ -152,8 +152,16 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      <div className="text-center text-gray-600 dark:text-gray-400 mt-6 mb-0">
+        <p className="flex items-center justify-center">
+          <span>Made with</span>
+          <span className="text-2xl mx-1" role="img" aria-label="love">❤️</span>
+          <span>by Yadnyesh Badgujar</span>
+        </p>
+      </div>
     </div>
   );
 };
 
 export default Contact;
+

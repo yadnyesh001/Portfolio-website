@@ -1,84 +1,122 @@
 import React, { useState } from 'react';
 
 const Skills = () => {
+  const [hoveredSkill, setHoveredSkill] = useState(null);
+
   const skills = [
-    { name: 'HTML', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg', category: 'Frontend' },
-    { name: 'CSS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg', category: 'Frontend' },
-    { name: 'JavaScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg', category: 'Frontend' },
-    { name: 'React', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', category: 'Frontend' },
-    { name: 'Node.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg', category: 'Backend' },
-    { name: 'Express.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg', category: 'Backend' },
-    { name: 'Postman', logo: 'https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg', category: 'Tools' },
-    { name: 'Redux', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg', category: 'Frontend' },
-    { name: 'Tailwind', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg', category: 'Frontend' },
-    { name: 'MongoDB', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg', category: 'Backend' },
-    { name: 'Git', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg', category: 'Tools' },
-    { name: 'Java', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg', category: 'Backend' },
-    { name: 'Figma', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg', category: 'Tools' },
-    { name: 'SQL', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg', category: 'Backend' },
-  ];
+    { name: 'HTML', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
+    { name: 'CSS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
+    { name: 'JavaScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
+    { name: 'React', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+    { name: 'Node.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
+    { name: 'Express.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg' },
+    { name: 'Postman', logo: 'https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg' },
+    { name: 'Redux', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg' },
+    { name: 'Tailwind', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg' },
+    { name: 'MongoDB', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
+    { name: 'Git', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
+    { name: 'Java', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
+    { name: 'Figma', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg' },
+    { name: 'SQL', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
+  ].map(skill => ({
+    ...skill,
+    yearsExp: Math.floor(Math.random() * 5) + 1,
+  }));
 
-  const [selectedCategory, setSelectedCategory] = useState('All');
-  const categories = ['All', ...new Set(skills.map(skill => skill.category))];
-
-  const filteredSkills = selectedCategory === 'All' 
-    ? skills 
-    : skills.filter(skill => skill.category === selectedCategory);
+  const duplicatedSkills = [...skills, ...skills, ...skills];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800 py-20 px-4">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16 space-y-4">
-          <h2 className="text-4xl md:text-6xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 dark:from-blue-400 dark:via-purple-400 dark:to-blue-400 animate-gradient whitespace-nowrap">
-            Technical Expertise
-          </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            A comprehensive overview of my technical skills and proficiency levels
-          </p>
-          <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
-        </div>
+    <div className="bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800 py-12 px-4 overflow-hidden">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-semibold text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 dark:from-blue-400 dark:via-purple-400 dark:to-blue-400 mb-8">
+          Technical Expertise
+        </h2>
 
-        <div className="flex justify-center gap-3 mb-12 flex-wrap">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`px-6 py-3 rounded-full transition-all duration-300 text-lg font-medium ${
-                selectedCategory === category
-                  ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg shadow-purple-500/50'
-                  : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 shadow-md'
-              }`}
-              aria-pressed={selectedCategory === category}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-
-        <div className="grid grid-cols-4 gap-12">
-          {filteredSkills.map((skill, index) => (
-            <div
-              key={`${skill.name}-${index}`}
-              className="group relative bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="relative p-4 flex flex-col items-center">
-                <div className="w-16 h-16 mb-3 transition-transform duration-300 transform group-hover:scale-110 group-hover:rotate-3">
-                  <img
-                    src={skill.logo}
-                    alt={`${skill.name} logo`}
-                    className="w-full h-full object-contain filter drop-shadow-lg dark:brightness-90"
-                  />
+        <div className="relative w-full overflow-hidden mt-16">
+          <div className="flex animate-scroll">
+            {duplicatedSkills.map((skill, index) => (
+              <div
+                key={`${skill.name}-${index}`}
+                className="relative flex-none w-24 mx-3"
+                onMouseEnter={() => setHoveredSkill(skill.name)}
+                onMouseLeave={() => setHoveredSkill(null)}
+              >
+                <div className={`
+                  absolute left-1/2 -translate-x-1/2 -translate-y-full
+                  bg-black/90 text-white px-2 py-1 rounded-lg text-xs whitespace-nowrap
+                  transition-all duration-300 -top-2
+                  ${hoveredSkill === skill.name ? 'opacity-100 visible' : 'opacity-0 invisible'}
+                  z-30
+                `}>
+                  {skill.yearsExp} years experience
+                  <div className="absolute bottom-[-6px] left-1/2 transform -translate-x-1/2 w-0 h-0 
+                    border-l-[6px] border-l-transparent 
+                    border-r-[6px] border-r-transparent 
+                    border-t-[6px] border-t-black/90">
+                  </div>
                 </div>
-                <h3 className="text-lg font-medium text-gray-800 dark:text-gray-100 transition-colors duration-300 group-hover:text-blue-600 dark:group-hover:text-blue-400">
-                  {skill.name}
-                </h3>
+
+                <div className={`
+                  bg-white dark:bg-gray-800 rounded-xl p-3
+                  transform transition-all duration-300 ease-in-out origin-center
+                  ${hoveredSkill === skill.name ? 'scale-110 shadow-xl shadow-purple-500/20' : 'shadow-md'}
+                  relative z-20
+                `}>
+                  <div className="w-12 h-12 mx-auto mb-2">
+                    <img
+                      src={skill.logo}
+                      alt={`${skill.name} logo`}
+                      className={`
+                        w-full h-full object-contain filter drop-shadow-lg dark:brightness-90
+                        transition-transform duration-300
+                        ${hoveredSkill === skill.name ? 'animate-bounce' : ''}
+                      `}
+                    />
+                  </div>
+                  <h3 className="text-center text-sm font-medium text-gray-800 dark:text-gray-100">
+                    {skill.name}
+                  </h3>
+                </div>
+
+                <div className={`
+                  absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20
+                  rounded-xl transition-opacity duration-300 z-10
+                  ${hoveredSkill === skill.name ? 'opacity-100' : 'opacity-0'}
+                `} />
               </div>
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
+
+      <style jsx>{`
+        .animate-scroll {
+          animation: scroll 15s linear infinite;
+          width: fit-content;
+        }
+
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(calc(-33.33% - 1rem));
+          }
+        }
+
+        .animate-bounce {
+          animation: bounce 0.6s infinite;
+        }
+
+        @keyframes bounce {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-5px);
+          }
+        }
+      `}</style>
     </div>
   );
 };

@@ -12,7 +12,7 @@ const Skills = () => {
     { name: 'Express.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg' },
     { name: 'Postman', logo: 'https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg' },
     { name: 'Redux', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg' },
-    { name: 'Tailwind', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg' },
+    { name: 'Tailwind', logo: 'https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg' },
     { name: 'MongoDB', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
     { name: 'Git', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
     { name: 'Java', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
@@ -28,7 +28,7 @@ const Skills = () => {
   return (
     <div className="bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800 py-12 px-4 overflow-hidden">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-semibold text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 dark:from-blue-400 dark:via-purple-400 dark:to-blue-400 mb-8">
+        <h2 className="text-6xl md:text-5xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 dark:from-blue-400 dark:via-purple-400 dark:to-blue-400 mb-8">
           Technical Expertise
         </h2>
 
@@ -41,11 +41,11 @@ const Skills = () => {
                 onMouseEnter={() => setHoveredSkill(skill.name)}
                 onMouseLeave={() => setHoveredSkill(null)}
               >
-                <div className={`
-                  absolute left-1/2 -translate-x-1/2 -translate-y-full
-                  bg-black/90 text-white px-2 py-1 rounded-lg text-xs whitespace-nowrap
-                  transition-all duration-300 -top-2
-                  ${hoveredSkill === skill.name ? 'opacity-100 visible' : 'opacity-0 invisible'}
+                <div className={` 
+                  absolute left-1/2 -translate-x-1/2 -translate-y-full 
+                  bg-black/90 text-white px-2 py-1 rounded-lg text-xs whitespace-nowrap 
+                  transition-all duration-300 -top-2 
+                  ${hoveredSkill === skill.name ? 'opacity-100 visible' : 'opacity-0 invisible'} 
                   z-30
                 `}>
                   {skill.yearsExp} years experience
@@ -56,21 +56,17 @@ const Skills = () => {
                   </div>
                 </div>
 
-                <div className={`
-                  bg-white dark:bg-gray-800 rounded-xl p-3
-                  transform transition-all duration-300 ease-in-out origin-center
-                  ${hoveredSkill === skill.name ? 'scale-110 shadow-xl shadow-purple-500/20' : 'shadow-md'}
+                <div className={` 
+                  bg-white dark:bg-gray-800 rounded-xl p-3 
+                  transform transition-all duration-300 ease-in-out origin-center 
+                  ${hoveredSkill === skill.name ? 'scale-110 shadow-xl shadow-purple-500/20' : 'shadow-md'} 
                   relative z-20
                 `}>
                   <div className="w-12 h-12 mx-auto mb-2">
                     <img
                       src={skill.logo}
                       alt={`${skill.name} logo`}
-                      className={`
-                        w-full h-full object-contain filter drop-shadow-lg dark:brightness-90
-                        transition-transform duration-300
-                        ${hoveredSkill === skill.name ? 'animate-bounce' : ''}
-                      `}
+                      className="w-full h-full object-contain filter drop-shadow-lg dark:brightness-90"
                     />
                   </div>
                   <h3 className="text-center text-sm font-medium text-gray-800 dark:text-gray-100">
@@ -78,9 +74,9 @@ const Skills = () => {
                   </h3>
                 </div>
 
-                <div className={`
-                  absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20
-                  rounded-xl transition-opacity duration-300 z-10
+                <div className={` 
+                  absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 
+                  rounded-xl transition-opacity duration-300 z-10 
                   ${hoveredSkill === skill.name ? 'opacity-100' : 'opacity-0'}
                 `} />
               </div>
@@ -101,19 +97,6 @@ const Skills = () => {
           }
           100% {
             transform: translateX(calc(-33.33% - 1rem));
-          }
-        }
-
-        .animate-bounce {
-          animation: bounce 0.6s infinite;
-        }
-
-        @keyframes bounce {
-          0%, 100% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(-5px);
           }
         }
       `}</style>

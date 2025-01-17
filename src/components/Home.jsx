@@ -1,8 +1,32 @@
 import React from "react";
-import { Github, Linkedin, Mail, Sparkles } from "lucide-react";
+import { Github, Linkedin, Mail, Sparkles, Download } from "lucide-react";
 import profile from "../assets/dp.jpeg";
 
 function App() {
+  const socialLinks = [
+    {
+      Icon: Github,
+      href: "#",
+      label: "GitHub",
+      color: "hover:text-gray-900 dark:hover:text-white",
+      bgHover: "hover:bg-gray-100 dark:hover:bg-gray-700",
+    },
+    {
+      Icon: Linkedin,
+      href: "#",
+      label: "LinkedIn",
+      color: "hover:text-blue-600 dark:hover:text-blue-400",
+      bgHover: "hover:bg-blue-50 dark:hover:bg-blue-900/30",
+    },
+    {
+      Icon: Mail,
+      href: "#",
+      label: "Email",
+      color: "hover:text-red-500 dark:hover:text-red-400",
+      bgHover: "hover:bg-red-50 dark:hover:bg-red-900/30",
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 relative overflow-hidden">
       {/* Enhanced background with multiple layers */}
@@ -95,49 +119,38 @@ function App() {
               </p>
             </div>
 
-            {/* Social Links */}
-            <div className="flex flex-wrap gap-6 mt-8 sm:mt-12 animate-slide-up animation-delay-600 justify-center lg:justify-start">
-              {[
-                {
-                  Icon: Github,
-                  href: "#",
-                  label: "GitHub",
-                  color: "hover:text-gray-900 dark:hover:text-white",
-                  bgHover: "hover:bg-gray-100 dark:hover:bg-gray-700",
-                },
-                {
-                  Icon: Linkedin,
-                  href: "#",
-                  label: "LinkedIn",
-                  color: "hover:text-blue-600 dark:hover:text-blue-400",
-                  bgHover: "hover:bg-blue-50 dark:hover:bg-blue-900/30",
-                },
-                {
-                  Icon: Mail,
-                  href: "#",
-                  label: "Email",
-                  color: "hover:text-red-500 dark:hover:text-red-400",
-                  bgHover: "hover:bg-red-50 dark:hover:bg-red-900/30",
-                },
-              ].map(({ Icon, href, label, color, bgHover }) => (
-                <a
-                  key={label}
-                  href={href}
-                  aria-label={label}
-                  className="group relative"
-                >
-                  <div
-                    className={`relative p-3 sm:p-4 rounded-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-110 transition-all duration-300 ${bgHover}`}
+            {/* Social Links with Resume Download */}
+            <div className="flex flex-col sm:flex-row items-center gap-6 mt-8 sm:mt-12 animate-slide-up animation-delay-600 justify-center lg:justify-start">
+              <div className="flex flex-wrap gap-6">
+                {socialLinks.map(({ Icon, href, label, color, bgHover }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    aria-label={label}
+                    className="group relative"
                   >
-                    <Icon
-                      className={`w-6 h-6 sm:w-7 sm:h-7 text-gray-600 dark:text-gray-300 ${color} transition-colors`}
-                    />
-                    <span className="absolute -bottom-12 left-1/2 -translate-x-1/2 px-3 py-1.5 bg-gray-900/90 dark:bg-gray-700/90 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap backdrop-blur-sm">
-                      {label}
-                    </span>
-                  </div>
-                </a>
-              ))}
+                    <div
+                      className={`relative p-3 sm:p-4 rounded-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-110 transition-all duration-300 ${bgHover}`}
+                    >
+                      <Icon
+                        className={`w-6 h-6 sm:w-7 sm:h-7 text-gray-600 dark:text-gray-300 ${color} transition-colors`}
+                      />
+                      <span className="absolute -bottom-12 left-1/2 -translate-x-1/2 px-3 py-1.5 bg-gray-900/90 dark:bg-gray-700/90 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap backdrop-blur-sm">
+                        {label}
+                      </span>
+                    </div>
+                  </a>
+                ))}
+              </div>
+
+              {/* Resume Download Link */}
+              <a
+                href="#"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+              >
+                <Download className="w-5 h-5" />
+                <span>Resume</span>
+              </a>
             </div>
           </div>
         </div>

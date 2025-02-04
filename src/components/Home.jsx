@@ -3,6 +3,9 @@ import { Github, Linkedin, Mail, Sparkles, Download } from "lucide-react";
 import profile from "../assets/dp.jpeg";
 
 function App() {
+  // Convert Google Drive link to direct download link
+  const resumeUrl = "https://drive.google.com/uc?export=download&id=18YWoXe5oYuk2C0LeEkbxtiFpp2GqbjbY";
+
   const socialLinks = [
     {
       Icon: Github,
@@ -27,6 +30,11 @@ function App() {
     },
   ];
 
+  const handleDownload = (e) => {
+    e.preventDefault();
+    window.open(resumeUrl, '_blank');
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 relative overflow-hidden">
       {/* Enhanced background with multiple layers */}
@@ -39,7 +47,7 @@ function App() {
       {/* Main content - Added pt-24 for navbar spacing */}
       <div className="relative flex min-h-screen items-center justify-center p-4 sm:p-6 lg:p-8 pt-24 md:pt-28">
         <div className="relative flex flex-col lg:flex-row items-center lg:items-start space-y-12 lg:space-y-0 lg:space-x-16 max-w-7xl mx-auto w-full">
-          {/* Profile Image Section - Adjusted sizing and spacing */}
+          {/* Profile Image Section */}
           <div className="relative group w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 flex-shrink-0 mt-8 sm:mt-12">
             {/* Ripple effects */}
             <div className="absolute inset-0 rounded-full border-2 border-indigo-500/30 animate-ripple"></div>
@@ -76,9 +84,9 @@ function App() {
             </div>
           </div>
 
-          {/* Content Section - Improved spacing and text layout */}
+          {/* Content Section */}
           <div className="max-w-2xl w-full px-4 sm:px-6">
-            {/* Name and Title with adjusted spacing */}
+            {/* Name and Title */}
             <div className="relative mb-8 text-center lg:text-left">
               <div className="absolute -left-12 top-0 flex flex-col space-y-2 sm:space-y-3">
                 <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-yellow-400 animate-pulse" />
@@ -88,7 +96,7 @@ function App() {
                 />
               </div>
 
-              {/* Updated greeting and name */}
+              {/* Greeting and name */}
               <div className="mb-4">
                 <h2 className="text-2xl sm:text-3xl text-gray-600 dark:text-gray-300 font-medium mb-2 animate-slide-up">
                   Hi, I am
@@ -145,8 +153,10 @@ function App() {
 
               {/* Resume Download Link */}
               <a
-                href="#"
+                href={resumeUrl}
+                onClick={handleDownload}
                 className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+                download="Yadnyesh_Badgujar_Resume.pdf"
               >
                 <Download className="w-5 h-5" />
                 <span>Resume</span>

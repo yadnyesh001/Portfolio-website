@@ -2,35 +2,53 @@ import React from 'react';
 import { Github, ExternalLink, Globe, Server, Database, Code2 } from 'lucide-react';
 import project1 from '../assets/project1.png';
 import project2 from '../assets/project2.png';
+import project3 from '../assets/project2.png'; // Using project2 image as placeholder for the third project
 
 function Projects() {
   const projects = [
     {
-      title: 'E-commerce Platform',
+      title: 'FreeLancing-Website',
       subtitle: 'Full Stack Development',
-      description: 'A cutting-edge e-commerce platform built with React and Node.js, featuring real-time inventory management and seamless payment integration. Supports multiple payment gateways and includes an advanced admin dashboard.',
+      description: 'A comprehensive freelancing platform built with the MERN stack, allowing users to post jobs, bid on projects, and manage their freelance work. Features include user authentication, job posting, bidding system, review system, and secure payment integration.',
       image: project1,
-      github: 'https://github.com',
-      demo: 'https://demo.com',
-      status: 'Production Ready',
+      github: 'https://github.com/yadnyesh001/FreeLancing-Website',
+      demo: 'https://github.com/yadnyesh001/FreeLancing-Website',
       technologies: [
         { name: 'React', icon: <Code2 size={16} />, color: 'bg-blue-100 text-blue-600 dark:bg-blue-900/50 dark:text-blue-300' },
+        { name: 'Tailwind CSS', icon: <Code2 size={16} />, color: 'bg-cyan-100 text-cyan-600 dark:bg-cyan-900/50 dark:text-cyan-300' },
         { name: 'Node.js', icon: <Server size={16} />, color: 'bg-green-100 text-green-600 dark:bg-green-900/50 dark:text-green-300' },
+        { name: 'Express', icon: <Server size={16} />, color: 'bg-amber-100 text-amber-600 dark:bg-amber-900/50 dark:text-amber-300' },
         { name: 'MongoDB', icon: <Database size={16} />, color: 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/50 dark:text-emerald-300' }
       ]
     },
     {
-      title: 'Task Management App',
-      subtitle: 'Real-time Collaboration',
-      description: 'An innovative task management application with real-time updates, featuring team workflows and progress tracking dashboards. Includes customizable Kanban boards and automated notifications.',
+      title: 'MealMonkey',
+      subtitle: 'Food Delivery Platform',
+      description: 'A feature-rich food delivery application that offers a seamless experience for ordering food from local restaurants. Includes user registration, restaurant browsing, menu exploration, cart management, order tracking, and payment processing capabilities.',
       image: project2,
-      github: 'https://github.com',
-      demo: 'https://demo.com',
-      status: 'Beta Release',
+      github: 'https://github.com/yadnyesh001/MealMonkey',
+      demo: 'https://mealmonkey-food.vercel.app/',
       technologies: [
         { name: 'React', icon: <Code2 size={16} />, color: 'bg-blue-100 text-blue-600 dark:bg-blue-900/50 dark:text-blue-300' },
-        { name: 'Socket.io', icon: <Globe size={16} />, color: 'bg-purple-100 text-purple-600 dark:bg-purple-900/50 dark:text-purple-300' },
-        { name: 'PostgreSQL', icon: <Database size={16} />, color: 'bg-indigo-100 text-indigo-600 dark:bg-indigo-900/50 dark:text-indigo-300' }
+        { name: 'Tailwind CSS', icon: <Code2 size={16} />, color: 'bg-cyan-100 text-cyan-600 dark:bg-cyan-900/50 dark:text-cyan-300' },
+        { name: 'Node.js', icon: <Server size={16} />, color: 'bg-green-100 text-green-600 dark:bg-green-900/50 dark:text-green-300' },
+        { name: 'Express', icon: <Server size={16} />, color: 'bg-amber-100 text-amber-600 dark:bg-amber-900/50 dark:text-amber-300' },
+        { name: 'MongoDB', icon: <Database size={16} />, color: 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/50 dark:text-emerald-300' }
+      ]
+    },
+    {
+      title: 'LinkedIn-Clone',
+      subtitle: 'Social Network Platform',
+      description: 'A sophisticated LinkedIn clone implementing core social networking features including professional profile creation, connection management, post sharing, and job searching. Features responsive design, real-time notifications, and messaging capabilities.',
+      image: project3,
+      github: 'https://github.com/yadnyesh001/LinkedIn-Clone',
+      demo: 'https://linkedin-clone-4pvl.onrender.com/',
+      technologies: [
+        { name: 'React', icon: <Code2 size={16} />, color: 'bg-blue-100 text-blue-600 dark:bg-blue-900/50 dark:text-blue-300' },
+        { name: 'Tailwind CSS', icon: <Code2 size={16} />, color: 'bg-cyan-100 text-cyan-600 dark:bg-cyan-900/50 dark:text-cyan-300' },
+        { name: 'Node.js', icon: <Server size={16} />, color: 'bg-green-100 text-green-600 dark:bg-green-900/50 dark:text-green-300' },
+        { name: 'Express', icon: <Server size={16} />, color: 'bg-amber-100 text-amber-600 dark:bg-amber-900/50 dark:text-amber-300' },
+        { name: 'MongoDB', icon: <Database size={16} />, color: 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/50 dark:text-emerald-300' }
       ]
     }
   ];
@@ -69,9 +87,6 @@ function Projects() {
                       alt={project.title}
                       className="w-full h-64 object-cover transform transition-transform duration-700 group-hover:scale-105"
                     />
-                    <div className="absolute top-3 right-3 px-3 py-1.5 rounded-full bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm text-sm font-medium text-blue-600 dark:text-blue-400 shadow-lg">
-                      {project.status}
-                    </div>
                   </div>
 
                   <div className="absolute -bottom-3 left-6 right-6 h-1 bg-gradient-to-r from-blue-500/0 via-blue-500/70 to-purple-500/0"></div>
@@ -137,4 +152,3 @@ function Projects() {
 }
 
 export default Projects;
-

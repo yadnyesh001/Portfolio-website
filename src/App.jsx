@@ -33,7 +33,7 @@ function App() {
         <section id="about" className="min-h-screen"><About /></section>
         <section id="skills"><Skills /></section>
         <section id="projects"><Projects /></section>
-        <section id="contact" className="min-h-screen"><Contact /></section>
+        <section id="contact"><Contact /></section>
       </main>
     </div>
   );

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Github, ExternalLink, Globe, Server, Database, Code2 } from 'lucide-react';
-import project1 from '../assets/project1.png';
+import project1 from '../assets/project1.jpg';
 import project2 from '../assets/project2.png';
-import project3 from '../assets/project2.png'; // Using project2 image as placeholder for the third project
+import project3 from '../assets/project3.png'; // Using project2 image as placeholder for the third project
 
 function Projects() {
   const projects = [
@@ -70,44 +70,50 @@ function Projects() {
           </p>
         </div>
 
-        <div className="space-y-20">
+        <div className="space-y-12 sm:space-y-16 md:space-y-20">
           {projects.map((project, index) => (
             <div 
               key={index}
               className="group relative grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center"
             >
+              {/* Image Section */}
               <div className={`relative z-10 ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
-                <div className="relative">
-                  <div className="absolute -inset-3 bg-gradient-to-r from-blue-500 to-purple-500 opacity-20 dark:opacity-40 blur-3xl group-hover:opacity-30 dark:group-hover:opacity-50 transition-opacity duration-500"></div>
+                <div className="relative mx-auto max-w-md sm:max-w-lg p-2">
+                  {/* Background gradient */}
+                  <div className="absolute -inset-3 bg-gradient-to-r from-blue-500 to-purple-500 opacity-20 dark:opacity-40 blur-3xl group-hover:opacity-30 dark:group-hover:opacity-50 transition-opacity duration-500 rounded-2xl"></div>
                   
+                  {/* Image container */}
                   <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                     <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 dark:from-blue-500/20 dark:to-purple-500/20 z-10 mix-blend-overlay"></div>
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-64 object-cover transform transition-transform duration-700 group-hover:scale-105"
-                    />
+                    <div className="w-full aspect-video">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover object-center transform transition-transform duration-700 group-hover:scale-105"
+                      />
+                    </div>
                   </div>
 
                   <div className="absolute -bottom-3 left-6 right-6 h-1 bg-gradient-to-r from-blue-500/0 via-blue-500/70 to-purple-500/0"></div>
                 </div>
               </div>
 
+              {/* Content Section */}
               <div className={`relative z-20 ${index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`}>
-                <div className="relative p-5">
+                <div className="relative p-4 sm:p-5">
                   <div className="absolute -inset-3 bg-white/40 dark:bg-gray-800/40 rounded-3xl blur-2xl"></div>
                   
-                  <div className="relative space-y-5">
+                  <div className="relative space-y-4 sm:space-y-5">
                     <div className="space-y-2">
-                      <span className="inline-block text-sm font-semibold text-blue-600 dark:text-blue-400 tracking-wide uppercase px-3 py-1 bg-blue-50 dark:bg-blue-900/30 rounded-full">
+                      <span className="inline-block text-xs sm:text-sm font-semibold text-blue-600 dark:text-blue-400 tracking-wide uppercase px-3 py-1 bg-blue-50 dark:bg-blue-900/30 rounded-full">
                         {project.subtitle}
                       </span>
-                      <h3 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-200 tracking-tight">
+                      <h3 className="text-2xl sm:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-200 tracking-tight">
                         {project.title}
                       </h3>
                     </div>
 
-                    <p className="text-base text-gray-600 dark:text-gray-300 leading-relaxed">
+                    <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
                       {project.description}
                     </p>
 
@@ -115,7 +121,7 @@ function Projects() {
                       {project.technologies.map((tech, techIndex) => (
                         <div 
                           key={techIndex}
-                          className={`flex items-center gap-2 px-3 py-1 rounded-full ${tech.color} shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5`}
+                          className={`flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1 rounded-full ${tech.color} shadow-sm hover:shadow-md transition-all duration-300 translate-y-0 hover:-translate-y-0.5 pb-0.5 hover:pb-0`}
                         >
                           {tech.icon}
                           <span className="text-xs font-medium">{tech.name}</span>
@@ -123,10 +129,10 @@ function Projects() {
                       ))}
                     </div>
 
-                    <div className="flex flex-wrap items-center gap-4 pt-3">
+                    <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-2 sm:pt-3">
                       <a
                         href={project.demo}
-                        className="group relative flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 text-white font-medium transition-all duration-300 hover:translate-y-[-2px] hover:shadow-lg hover:shadow-blue-500/30"
+                        className="group relative flex items-center gap-1 sm:gap-2 px-4 sm:px-5 py-2 rounded-full bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 text-white font-medium transition-all duration-300 translate-y-0 hover:-translate-y-0.5 pb-2 hover:pb-1.5 hover:shadow-lg hover:shadow-blue-500/30 text-xs sm:text-sm"
                       >
                         <span>Live Preview</span>
                         <ExternalLink size={16} className="transform group-hover:translate-x-1 transition-transform duration-300" />
@@ -134,7 +140,7 @@ function Projects() {
                       </a>
                       <a
                         href={project.github}
-                        className="group flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300 font-medium hover:-translate-y-0.5"
+                        className="group flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300 font-medium translate-y-0 hover:-translate-y-0.5 pb-2 hover:pb-1.5 text-xs sm:text-sm"
                       >
                         <Github size={16} />
                         <span>Source Code</span>

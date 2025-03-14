@@ -52,17 +52,17 @@ const Contact = () => {
               <ContactInfo
                 icon={Mail}
                 text="yadnyeshavinash.b22@iiits.in"
-                href="mailto:yadnyeshavinash.b22@iiits.in"
+                href=""
               />
               <ContactInfo
                 icon={Phone}
                 text="+91 9699909117"
-                href="tel:+919699909117"
+                href=""
               />
               <ContactInfo
                 icon={MapPin}
                 text="Maharashtra, India"
-                href="https://maps.google.com"
+                href=""
               />
             </div>
           </div>

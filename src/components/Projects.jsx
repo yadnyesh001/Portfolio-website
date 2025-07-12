@@ -1,31 +1,16 @@
 import React from 'react';
 import { Github, ExternalLink, Globe, Server, Database, Code2 } from 'lucide-react';
-import project1 from '../assets/project1.jpg';
+import project1 from '../assets/project1.png';
 import project2 from '../assets/project2.png';
 import project3 from '../assets/project3.png'; // Using project2 image as placeholder for the third project
 
 function Projects() {
   const projects = [
     {
-      title: 'FreeLancing-Website',
-      subtitle: 'Full Stack Development',
-      description: 'A comprehensive freelancing platform built with the MERN stack, allowing users to post jobs, bid on projects, and manage their freelance work. Features include user authentication, job posting, bidding system, review system, and secure payment integration.',
-      image: project1,
-      github: 'https://github.com/yadnyesh001/FreeLancing-Website',
-      demo: 'https://github.com/yadnyesh001/FreeLancing-Website',
-      technologies: [
-        { name: 'React', icon: <Code2 size={16} />, color: 'bg-blue-100 text-blue-600 dark:bg-blue-900/50 dark:text-blue-300' },
-        { name: 'Tailwind CSS', icon: <Code2 size={16} />, color: 'bg-cyan-100 text-cyan-600 dark:bg-cyan-900/50 dark:text-cyan-300' },
-        { name: 'Node.js', icon: <Server size={16} />, color: 'bg-green-100 text-green-600 dark:bg-green-900/50 dark:text-green-300' },
-        { name: 'Express', icon: <Server size={16} />, color: 'bg-amber-100 text-amber-600 dark:bg-amber-900/50 dark:text-amber-300' },
-        { name: 'MongoDB', icon: <Database size={16} />, color: 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/50 dark:text-emerald-300' }
-      ]
-    },
-    {
       title: 'MealMonkey',
       subtitle: 'Food Delivery Platform',
       description: 'A feature-rich food delivery application that offers a seamless experience for ordering food from local restaurants. Includes user registration, restaurant browsing, menu exploration, cart management, order tracking, and payment processing capabilities.',
-      image: project2,
+      image: project1,
       github: 'https://github.com/yadnyesh001/MealMonkey',
       demo: 'https://mealmonkey-food.vercel.app/',
       technologies: [
@@ -40,7 +25,7 @@ function Projects() {
       title: 'LinkedIn-Clone',
       subtitle: 'Social Network Platform',
       description: 'A sophisticated LinkedIn clone implementing core social networking features including professional profile creation, connection management, post sharing, and job searching. Features responsive design, real-time notifications, and messaging capabilities.',
-      image: project3,
+      image: project2,
       github: 'https://github.com/yadnyesh001/LinkedIn-Clone',
       demo: 'https://linkedin-clone-4pvl.onrender.com/',
       technologies: [
@@ -50,6 +35,42 @@ function Projects() {
         { name: 'Express', icon: <Server size={16} />, color: 'bg-amber-100 text-amber-600 dark:bg-amber-900/50 dark:text-amber-300' },
         { name: 'MongoDB', icon: <Database size={16} />, color: 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/50 dark:text-emerald-300' }
       ]
+    },
+    {
+      title: 'Hospital Management System',
+      subtitle: 'Core Java, OOP, MySQL, Console-Based UI',
+      description:
+        'A console-based hospital management system developed using Core Java to handle patient records, doctor schedules, and appointments. Features complete CRUD operations, MySQL integration via JDBC, and a clean console UI enhanced by user feedback.',
+      image: project3, 
+      github: 'https://github.com/yadnyesh001/Hospital-Management-System',
+      demo: 'https://github.com/yadnyesh001/Hospital-Management-System',
+      technologies: [
+        {
+          name: 'Java',
+          icon: <Code2 size={16} />,
+          color: 'bg-red-100 text-red-600 dark:bg-red-900/50 dark:text-red-300',
+        },
+        {
+          name: 'MySQL',
+          icon: <Database size={16} />,
+          color: 'bg-yellow-100 text-yellow-600 dark:bg-yellow-900/50 dark:text-yellow-300',
+        },
+        {
+          name: 'JDBC',
+          icon: <Server size={16} />,
+          color: 'bg-indigo-100 text-indigo-600 dark:bg-indigo-900/50 dark:text-indigo-300',
+        },
+        {
+          name: 'OOP',
+          icon: <Code2 size={16} />,
+          color: 'bg-teal-100 text-teal-600 dark:bg-teal-900/50 dark:text-teal-300',
+        },
+        {
+          name: 'Console UI',
+          icon: <Code2 size={16} />,
+          color: 'bg-gray-100 text-gray-600 dark:bg-gray-900/50 dark:text-gray-300',
+        },
+      ],
     }
   ];
 

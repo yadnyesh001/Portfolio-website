@@ -55,13 +55,13 @@ function Projects() {
       ],
     },
     {
-      title: "LinkedIn-Clone",
-      subtitle: "Social Network Platform",
+      title: "Buzz Chat",
+      subtitle: "Real-time Chat Application",
       description:
-        "A sophisticated LinkedIn clone implementing core social networking features including professional profile creation, connection management, post sharing, and job searching. Features responsive design, real-time notifications, and messaging capabilities.",
+        "A real-time chat platform with secure authentication, one-to-one and group messaging, typing indicators, and responsive UI. Built with the MERN stack and WebSocket communication for instant updates.",
       image: project2,
-      github: "https://github.com/yadnyesh001/LinkedIn-Clone",
-      demo: "https://linkedin-clone-4pvl.onrender.com/",
+      github: "https://github.com/yadnyesh001/Buzz-Chat",
+      demo: "https://real-time-chat-application-jvzm.onrender.com/",
       technologies: [
         {
           name: "React",
@@ -93,8 +93,15 @@ function Projects() {
           color:
             "bg-emerald-100 text-emerald-600 dark:bg-emerald-900/50 dark:text-emerald-300",
         },
+        {
+          name: "Socket.IO",
+          icon: <Server size={16} />,
+          color:
+            "bg-purple-100 text-purple-600 dark:bg-purple-900/50 dark:text-purple-300",
+        },
       ],
     },
+
     {
       title: "Hospital Management System",
       subtitle: "Core Java, OOP, MySQL, Console-Based UI",
